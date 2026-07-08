@@ -9,7 +9,7 @@
   <meta property="og:image" content="https://haydencscott.com/profile2.jpg" />
   <meta property="og:url" content="https://haydencscott.com" />
   <meta property="og:type" content="website" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -73,7 +73,7 @@
     }
     .hero h1 span { color: var(--accent); }
     .hero .tagline {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Inter', 'Arial', sans-serif;
       font-size: clamp(0.85rem, 2vw, 1rem);
       letter-spacing: 0.25em;
       text-transform: uppercase;
@@ -95,7 +95,7 @@
       padding: 0.75rem 2rem;
       border: 1px solid var(--accent);
       color: var(--accent);
-      font-family: 'Arial', sans-serif;
+      font-family: 'Inter', 'Arial', sans-serif;
       font-size: 0.8rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -123,8 +123,9 @@
       margin: 0 auto;
     }
     .section-label {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.75rem;
+      font-family: 'Cinzel', Georgia, serif;
+      font-weight: 600;
+      font-size: 0.85rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--accent);
@@ -179,7 +180,7 @@
     .video-link {
       display: inline-block;
       margin-top: 1.25rem;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Inter', 'Arial', sans-serif;
       font-size: 0.85rem;
       letter-spacing: 0.1em;
     }
@@ -207,6 +208,41 @@
     .visuals-grid a:hover img {
       transform: scale(1.05);
     }
+    .visuals-grid a {
+      cursor: pointer;
+    }
+
+    /* LIGHTBOX */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+    #lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      background: rgba(0,0,0,0.5);
+      border: 1px solid #444;
+      color: #fff;
+      font-size: 1.4rem;
+      line-height: 1;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+    }
 
     /* CREDITS */
     .credits-group {
@@ -217,11 +253,11 @@
     }
     .credits-group h3 {
       color: var(--accent);
-      font-size: 0.95rem;
-      font-weight: normal;
+      font-size: 1rem;
+      font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Cinzel', Georgia, serif;
       margin-bottom: 1rem;
     }
     .credits-list {
@@ -245,14 +281,14 @@
     .credit-meta {
       display: flex;
       gap: 1rem;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Inter', 'Arial', sans-serif;
       font-size: 0.85rem;
       color: var(--muted);
       white-space: nowrap;
     }
     .credits-note {
       margin-top: 1rem;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Inter', 'Arial', sans-serif;
       font-size: 0.8rem;
       color: #555;
       font-style: italic;
@@ -278,10 +314,11 @@
       margin-bottom: 1rem;
     }
     .service-card h3 {
+      font-family: 'Cinzel', Georgia, serif;
       color: var(--accent);
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       margin-bottom: 0.75rem;
-      font-weight: normal;
+      font-weight: 600;
       letter-spacing: 0.05em;
     }
     .service-card p {
@@ -302,7 +339,7 @@
       border-bottom: 1px solid var(--accent);
       padding-bottom: 2px;
       margin-bottom: 2.5rem;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Inter', 'Arial', sans-serif;
     }
     .social-links {
       display: flex;
@@ -317,7 +354,7 @@
       text-align: center;
       padding: 2rem;
       color: #444;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Inter', 'Arial', sans-serif;
       font-size: 0.8rem;
       border-top: 1px solid #1a1a1a;
     }
@@ -350,7 +387,7 @@
     <div class="hero-links">
       <a href="#music" class="btn filled">Hear My Work</a>
       <a href="#contact" class="btn">Get In Touch</a>
-      <button onclick="openPayment()" class="btn" style="border:1px solid var(--accent); color:var(--accent); cursor:pointer; font-family:Arial,sans-serif; background:none;">Pay</button>
+      <button onclick="openPayment()" class="btn" style="border:1px solid var(--accent); color:var(--accent); cursor:pointer; font-family:'Inter',Arial,sans-serif; background:none;">Pay</button>
     </div>
   </div>
 
@@ -401,10 +438,10 @@
   <section id="visuals">
     <div class="section-label">Visuals</div>
     <div class="visuals-grid">
-      <a href="visuals/DANCER3_2.0.jpg" target="_blank"><img src="visuals/DANCER3_2.0.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
-      <a href="visuals/IMG_4322-Edit.jpg" target="_blank"><img src="visuals/IMG_4322-Edit.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
-      <a href="visuals/_MG_4183-Edit.jpg" target="_blank"><img src="visuals/_MG_4183-Edit.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
-      <a href="visuals/_MG_3654.jpg" target="_blank"><img src="visuals/_MG_3654.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+      <a href="visuals/DANCER3_2.0.jpg" onclick="return openLightbox(event, 'visuals/DANCER3_2.0.jpg')"><img src="visuals/DANCER3_2.0.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+      <a href="visuals/IMG_4322-Edit.jpg" onclick="return openLightbox(event, 'visuals/IMG_4322-Edit.jpg')"><img src="visuals/IMG_4322-Edit.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+      <a href="visuals/_MG_4183-Edit.jpg" onclick="return openLightbox(event, 'visuals/_MG_4183-Edit.jpg')"><img src="visuals/_MG_4183-Edit.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+      <a href="visuals/_MG_3654.jpg" onclick="return openLightbox(event, 'visuals/_MG_3654.jpg')"><img src="visuals/_MG_3654.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
     </div>
   </section>
 
@@ -473,7 +510,7 @@
     <div class="social-links">
       <a href="https://www.youtube.com/@HaydenScott84" target="_blank" class="btn">YouTube</a>
       <a href="https://on.soundcloud.com/2ULxC9I7eRhOx5Jbcm" target="_blank" class="btn">SoundCloud</a>
-      <button onclick="openPayment()" class="btn filled" style="border:none; cursor:pointer; font-family:Arial,sans-serif;">Make a Payment</button>
+      <button onclick="openPayment()" class="btn filled" style="border:none; cursor:pointer; font-family:'Inter',Arial,sans-serif;">Make a Payment</button>
     </div>
   </section>
 
@@ -487,26 +524,32 @@
     <div style="background:#1a1a1a; border:1px solid #333; border-radius:6px; padding:2.5rem; max-width:380px; width:90%; text-align:center; position:relative;">
       <button onclick="closePayment()" style="position:absolute; top:1rem; right:1rem; background:none; border:none; color:#888; font-size:1.3rem; cursor:pointer;">✕</button>
       <h3 style="color:#fff; font-size:1.3rem; margin-bottom:0.5rem; font-family:Georgia,serif;">Make a Payment</h3>
-      <p style="color:#888; font-size:0.85rem; font-family:Arial,sans-serif; margin-bottom:2rem;">Choose your preferred method below.</p>
+      <p style="color:#888; font-size:0.85rem; font-family:'Inter',Arial,sans-serif; margin-bottom:2rem;">Choose your preferred method below.</p>
 
-      <a href="/pay.html" style="display:flex; align-items:center; gap:1rem; background:var(--accent); color:#0a0a0a; padding:1rem 1.5rem; border-radius:4px; margin-bottom:1rem; font-family:Arial,sans-serif; font-weight:bold; text-decoration:none; justify-content:center; font-size:0.95rem;">
+      <a href="/pay.html" style="display:flex; align-items:center; gap:1rem; background:var(--accent); color:#0a0a0a; padding:1rem 1.5rem; border-radius:4px; margin-bottom:1rem; font-family:'Inter',Arial,sans-serif; font-weight:bold; text-decoration:none; justify-content:center; font-size:0.95rem;">
         <span style="font-size:1.2rem;">💳</span> Pay by Card (Stripe)
       </a>
 
-      <a href="https://venmo.com/Hayden-Scott" target="_blank" style="display:flex; align-items:center; gap:1rem; background:#008CFF; color:#fff; padding:1rem 1.5rem; border-radius:4px; margin-bottom:1rem; font-family:Arial,sans-serif; font-weight:bold; text-decoration:none; justify-content:center; font-size:0.95rem;">
+      <a href="https://venmo.com/Hayden-Scott" target="_blank" style="display:flex; align-items:center; gap:1rem; background:#008CFF; color:#fff; padding:1rem 1.5rem; border-radius:4px; margin-bottom:1rem; font-family:'Inter',Arial,sans-serif; font-weight:bold; text-decoration:none; justify-content:center; font-size:0.95rem;">
         <span style="font-size:1.2rem;">💙</span> Pay via Venmo
       </a>
 
-      <button onclick="copyZelle()" style="display:flex; align-items:center; gap:1rem; background:#6d1ed4; color:#fff; padding:1rem 1.5rem; border-radius:4px; width:100%; border:none; cursor:pointer; font-family:Arial,sans-serif; font-weight:bold; font-size:0.95rem; justify-content:center;">
+      <button onclick="copyZelle()" style="display:flex; align-items:center; gap:1rem; background:#6d1ed4; color:#fff; padding:1rem 1.5rem; border-radius:4px; width:100%; border:none; cursor:pointer; font-family:'Inter',Arial,sans-serif; font-weight:bold; font-size:0.95rem; justify-content:center;">
         <span style="font-size:1.2rem;">💜</span> Pay via Zelle
       </button>
-      <a href="https://www.paypal.com/paypalme/haydenscottthemusician" target="_blank" style="display:flex; align-items:center; gap:1rem; background:#003087; color:#fff; padding:1rem 1.5rem; border-radius:4px; margin-top:1rem; font-family:Arial,sans-serif; font-weight:bold; text-decoration:none; justify-content:center; font-size:0.95rem;">
+      <a href="https://www.paypal.com/paypalme/haydenscottthemusician" target="_blank" style="display:flex; align-items:center; gap:1rem; background:#003087; color:#fff; padding:1rem 1.5rem; border-radius:4px; margin-top:1rem; font-family:'Inter',Arial,sans-serif; font-weight:bold; text-decoration:none; justify-content:center; font-size:0.95rem;">
         <span style="font-size:1.2rem;">🌐</span> Pay via PayPal (International)
       </a>
 
-      <p id="zelle-msg" style="color:#c8a96e; font-size:0.8rem; font-family:Arial,sans-serif; margin-top:0.6rem; min-height:1.2rem;"></p>
-      <p style="color:#555; font-size:0.72rem; font-family:Arial,sans-serif; margin-top:1rem; line-height:1.5;">Note: Any transaction fees charged by Venmo, Zelle, or PayPal are the responsibility of the sender. Hayden C Scott is not liable for fees imposed by third-party payment platforms.</p>
+      <p id="zelle-msg" style="color:#c8a96e; font-size:0.8rem; font-family:'Inter',Arial,sans-serif; margin-top:0.6rem; min-height:1.2rem;"></p>
+      <p style="color:#555; font-size:0.72rem; font-family:'Inter',Arial,sans-serif; margin-top:1rem; line-height:1.5;">Note: Any transaction fees charged by Venmo, Zelle, or PayPal are the responsibility of the sender. Hayden C Scott is not liable for fees imposed by third-party payment platforms.</p>
     </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+    <img id="lightbox-img" src="" alt="">
   </div>
 
   <script>
@@ -525,6 +568,23 @@
     }
     document.getElementById('payment-modal').addEventListener('click', function(e) {
       if (e.target === this) closePayment();
+    });
+
+    function openLightbox(e, src) {
+      e.preventDefault();
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+      return false;
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      document.getElementById('lightbox-img').src = '';
+    }
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
     });
   </script>
 
