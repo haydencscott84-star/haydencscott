@@ -184,6 +184,80 @@
       letter-spacing: 0.1em;
     }
 
+    /* VISUALS */
+    .visuals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .visuals-grid a {
+      display: block;
+      overflow: hidden;
+      border-radius: 4px;
+      aspect-ratio: 4 / 3;
+    }
+    .visuals-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .visuals-grid a:hover img {
+      transform: scale(1.05);
+    }
+
+    /* CREDITS */
+    .credits-group {
+      margin-top: 2.5rem;
+    }
+    .credits-group:first-of-type {
+      margin-top: 2rem;
+    }
+    .credits-group h3 {
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: normal;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: 'Arial', sans-serif;
+      margin-bottom: 1rem;
+    }
+    .credits-list {
+      list-style: none;
+    }
+    .credits-list li {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #1e1e1e;
+      font-size: 1.05rem;
+    }
+    .credits-list li:last-child {
+      border-bottom: none;
+    }
+    .credit-name {
+      color: #fff;
+    }
+    .credit-meta {
+      display: flex;
+      gap: 1rem;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .credits-note {
+      margin-top: 1rem;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.8rem;
+      color: #555;
+      font-style: italic;
+    }
+
     /* SERVICES */
     .services-grid {
       display: grid;
@@ -262,6 +336,8 @@
     <ul>
       <li><a href="#music">Music</a></li>
       <li><a href="#video">Video</a></li>
+      <li><a href="#visuals">Visuals</a></li>
+      <li><a href="#credits">Credits</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -270,7 +346,7 @@
   <!-- HERO -->
   <div class="hero">
     <img src="profile2.jpg" alt="Hayden C Scott" style="width:100%; max-width:510px; height:auto; display:block; margin-bottom:2rem; border-radius:4px;">
-    <p class="tagline">Music Director <span>·</span> Composer <span>·</span> Playback Systems <span>·</span> Lessons</p>
+    <p class="tagline">Music Director <span>·</span> Composer <span>·</span> Playback Systems</p>
     <div class="hero-links">
       <a href="#music" class="btn filled">Hear My Work</a>
       <a href="#contact" class="btn">Get In Touch</a>
@@ -321,6 +397,54 @@
 
   <hr class="divider" />
 
+  <!-- VISUALS -->
+  <section id="visuals">
+    <div class="section-label">Visuals</div>
+    <div class="visuals-grid">
+      <a href="visuals/DANCER3_2.0.jpg" target="_blank"><img src="visuals/DANCER3_2.0.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+      <a href="visuals/IMG_4322-Edit.jpg" target="_blank"><img src="visuals/IMG_4322-Edit.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+      <a href="visuals/_MG_4183-Edit.jpg" target="_blank"><img src="visuals/_MG_4183-Edit.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+      <a href="visuals/_MG_3654.jpg" target="_blank"><img src="visuals/_MG_3654.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- CREDITS -->
+  <section id="credits">
+    <div class="section-label">Credits</div>
+
+    <div class="credits-group">
+      <h3>Touring / MD / Drums</h3>
+      <ul class="credits-list">
+        <li><span class="credit-name">Ghost</span><span class="credit-meta"><span>MD / Drums</span><span>2017–Current</span></span></li>
+        <li><span class="credit-name">Brody Dalle</span><span class="credit-meta"><span>Drums / Playback</span><span>2013–2014</span></span></li>
+        <li><span class="credit-name">Paramore</span><span class="credit-meta"><span>Drums</span><span>2012</span></span></li>
+        <li><span class="credit-name">Awolnation</span><span class="credit-meta"><span>Drums</span><span>2010–2013</span></span></li>
+        <li><span class="credit-name">The New Regime</span><span class="credit-meta"><span>Drums / Playback</span><span>2008–2016</span></span></li>
+      </ul>
+      <p class="credits-note">+ select others available on request</p>
+    </div>
+
+    <div class="credits-group">
+      <h3>Composition</h3>
+      <ul class="credits-list">
+        <li><span class="credit-name">The Hired Man</span><span class="credit-meta"><span>Composer</span><span>2026</span></span></li>
+        <li><span class="credit-name">Right Here Right Now</span><span class="credit-meta"><span>Additional Score</span><span>2024</span></span></li>
+        <li><span class="credit-name">Maw</span><span class="credit-meta"><span>Composer</span><span>2023</span></span></li>
+      </ul>
+    </div>
+
+    <div class="credits-group">
+      <h3>Engineer</h3>
+      <ul class="credits-list">
+        <li><span class="credit-name">Rancho De La Luna (Studio)</span><span class="credit-meta"><span>Engineer</span><span>2015–2017</span></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
   <!-- SERVICES -->
   <section id="services">
     <div class="section-label">Work With Me</div>
@@ -334,11 +458,6 @@
         <div class="icon">🎼</div>
         <h3>Composer</h3>
         <p>Original compositions spanning multiple genres. Passionate about crafting music that serves the moment — from intimate pieces to full production arrangements. Collaborations and drumming sessions are always welcome.</p>
-      </div>
-      <div class="service-card">
-        <div class="icon">🎓</div>
-        <h3>Lessons</h3>
-        <p>One-on-one lessons focused on drumming technique, touring preparation, and playback systems. Whether you're just starting out or looking to work at a professional level, lessons are tailored to where you are and where you want to go.</p>
       </div>
     </div>
   </section>
