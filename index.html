@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hayden C Scott — Music Director | Composer | Playback Systems | Lessons</title>
+  <meta property="og:title" content="Hayden C Scott — Music Director | Composer | Playback Systems | Lessons" />
+  <meta property="og:description" content="20 years in live music. Credits include Ghost and Awolnation. Music Director, Composer, and Drum Instructor based in Los Angeles." />
+  <meta property="og:image" content="https://haydencscott.com/profile2.jpg" />
+  <meta property="og:url" content="https://haydencscott.com" />
+  <meta property="og:type" content="website" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --card: #1a1a1a;
+      --accent: #c8a96e;
+      --text: #e8e8e8;
+      --muted: #888;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+    nav .logo {
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    nav ul {
+      display: none;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      background: radial-gradient(ellipse at center, #1a1208 0%, #0a0a0a 70%);
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      letter-spacing: 0.05em;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      font-family: 'Trajan Pro', 'Cinzel', Georgia, serif;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero .tagline {
+      font-family: 'Arial', sans-serif;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+    .hero .tagline span {
+      color: var(--accent);
+      margin: 0 0.5rem;
+    }
+    .hero-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-family: 'Arial', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+      border-radius: 2px;
+    }
+    .btn:hover {
+      background: var(--accent);
+      color: var(--black);
+      text-decoration: none;
+    }
+    .btn.filled {
+      background: var(--accent);
+      color: var(--black);
+    }
+    .btn.filled:hover {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 5rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    section h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: #fff;
+      margin-bottom: 1.5rem;
+      font-weight: normal;
+    }
+    section p {
+      color: #bbb;
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      max-width: 700px;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid #222;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* MUSIC */
+    .embed-wrap {
+      margin-top: 2rem;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .embed-wrap iframe {
+      width: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* VIDEO */
+    .video-wrap {
+      margin-top: 2rem;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .video-link {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .service-card {
+      background: var(--card);
+      border: 1px solid #2a2a2a;
+      border-radius: 4px;
+      padding: 2rem;
+      transition: border-color 0.2s;
+    }
+    .service-card:hover { border-color: var(--accent); }
+    .service-card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      font-weight: normal;
+      letter-spacing: 0.05em;
+    }
+    .service-card p {
+      font-size: 0.95rem;
+      color: #999;
+      margin: 0;
+    }
+
+    /* CONTACT */
+    #contact {
+      text-align: center;
+    }
+    #contact p { margin: 0 auto 2rem; }
+    .contact-email {
+      display: inline-block;
+      font-size: 1.1rem;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+      margin-bottom: 2.5rem;
+      font-family: 'Arial', sans-serif;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #444;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.8rem;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      nav ul { gap: 1rem; }
+      nav ul li a { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo"></div>
+    <ul>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="profile2.jpg" alt="Hayden C Scott" style="width:100%; max-width:510px; height:auto; display:block; margin-bottom:2rem; border-radius:4px;">
+    <p class="tagline">Music Director <span>·</span> Composer <span>·</span> Playback Systems <span>·</span> Lessons</p>
+    <div class="hero-links">
+      <a href="#music" class="btn filled">Hear My Work</a>
+      <a href="#contact" class="btn">Get In Touch</a>
+      <button onclick="openPayment()" class="btn" style="border:1px solid var(--accent); color:var(--accent); cursor:pointer; font-family:Arial,sans-serif; background:none;">Pay</button>
+    </div>
+  </div>
+
+  <!-- MUSIC -->
+  <section id="music">
+    <div class="section-label">Listen</div>
+    <div class="embed-wrap">
+      <iframe
+        scrolling="no"
+        allow="autoplay"
+        height="450"
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/haydencscott/sets/2-track&color=%23c8a96e&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+      </iframe>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- VIDEO -->
+  <section id="video">
+    <div class="section-label">Watch</div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap:1.5rem; margin-top:2rem;">
+      <div class="video-wrap" style="margin:0;">
+        <iframe src="https://www.youtube.com/embed/NmxFxBiCrL4" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      </div>
+      <div class="video-wrap" style="margin:0;">
+        <iframe src="https://www.youtube.com/embed/tonYGA5aCJk" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      </div>
+      <div class="video-wrap" style="margin:0;">
+        <iframe src="https://www.youtube.com/embed/kerULrRj7os" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      </div>
+      <div class="video-wrap" style="margin:0;">
+        <iframe src="https://www.youtube.com/embed/AA_PG3OoNR4" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      </div>
+      <div class="video-wrap" style="margin:0;">
+        <iframe src="https://www.youtube.com/embed/mmnj_UaVsYg" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      </div>
+      <div class="video-wrap" style="margin:0;">
+        <iframe src="https://www.youtube.com/embed/wzWJGNgPhuA" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      </div>
+    </div>
+    <a href="https://www.youtube.com/@HaydenScott84" target="_blank" class="video-link">→ View full channel on YouTube</a>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-label">Work With Me</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">🎬</div>
+        <h3>Music Director</h3>
+        <p>20 years in live music with credits including Ghost and Awolnation. Streamlining the preparation and production of bands, finding the right people, and designing performances with the flexibility to create unique moments — while maintaining precision and consistency.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🎼</div>
+        <h3>Composer</h3>
+        <p>Original compositions spanning multiple genres. Passionate about crafting music that serves the moment — from intimate pieces to full production arrangements. Collaborations and drumming sessions are always welcome.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🎓</div>
+        <h3>Lessons</h3>
+        <p>One-on-one lessons focused on drumming technique, touring preparation, and playback systems. Whether you're just starting out or looking to work at a professional level, lessons are tailored to where you are and where you want to go.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">Reach Out</div>
+    <a href="mailto:haydenscottthemusician@gmail.com" class="contact-email">
+      haydenscottthemusician@gmail.com
+    </a>
+    <div class="social-links">
+      <a href="https://www.youtube.com/@HaydenScott84" target="_blank" class="btn">YouTube</a>
+      <a href="https://on.soundcloud.com/2ULxC9I7eRhOx5Jbcm" target="_blank" class="btn">SoundCloud</a>
+      <button onclick="openPayment()" class="btn filled" style="border:none; cursor:pointer; font-family:Arial,sans-serif;">Make a Payment</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Hayden C Scott. All rights reserved.
+    <span style="display:block; margin-top:0.4rem; color:#333; font-size:0.75rem;">Last updated: June 2026</span>
+  </footer>
+
+  <!-- PAYMENT MODAL -->
+  <div id="payment-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:#1a1a1a; border:1px solid #333; border-radius:6px; padding:2.5rem; max-width:380px; width:90%; text-align:center; position:relative;">
+      <button onclick="closePayment()" style="position:absolute; top:1rem; right:1rem; background:none; border:none; color:#888; font-size:1.3rem; cursor:pointer;">✕</button>
+      <h3 style="color:#fff; font-size:1.3rem; margin-bottom:0.5rem; font-family:Georgia,serif;">Make a Payment</h3>
+      <p style="color:#888; font-size:0.85rem; font-family:Arial,sans-serif; margin-bottom:2rem;">Choose your preferred method below.</p>
+
+      <a href="/pay.html" style="display:flex; align-items:center; gap:1rem; background:var(--accent); color:#0a0a0a; padding:1rem 1.5rem; border-radius:4px; margin-bottom:1rem; font-family:Arial,sans-serif; font-weight:bold; text-decoration:none; justify-content:center; font-size:0.95rem;">
+        <span style="font-size:1.2rem;">💳</span> Pay by Card (Stripe)
+      </a>
+
+      <a href="https://venmo.com/Hayden-Scott" target="_blank" style="display:flex; align-items:center; gap:1rem; background:#008CFF; color:#fff; padding:1rem 1.5rem; border-radius:4px; margin-bottom:1rem; font-family:Arial,sans-serif; font-weight:bold; text-decoration:none; justify-content:center; font-size:0.95rem;">
+        <span style="font-size:1.2rem;">💙</span> Pay via Venmo
+      </a>
+
+      <button onclick="copyZelle()" style="display:flex; align-items:center; gap:1rem; background:#6d1ed4; color:#fff; padding:1rem 1.5rem; border-radius:4px; width:100%; border:none; cursor:pointer; font-family:Arial,sans-serif; font-weight:bold; font-size:0.95rem; justify-content:center;">
+        <span style="font-size:1.2rem;">💜</span> Pay via Zelle
+      </button>
+      <a href="https://www.paypal.com/paypalme/haydenscottthemusician" target="_blank" style="display:flex; align-items:center; gap:1rem; background:#003087; color:#fff; padding:1rem 1.5rem; border-radius:4px; margin-top:1rem; font-family:Arial,sans-serif; font-weight:bold; text-decoration:none; justify-content:center; font-size:0.95rem;">
+        <span style="font-size:1.2rem;">🌐</span> Pay via PayPal (International)
+      </a>
+
+      <p id="zelle-msg" style="color:#c8a96e; font-size:0.8rem; font-family:Arial,sans-serif; margin-top:0.6rem; min-height:1.2rem;"></p>
+      <p style="color:#555; font-size:0.72rem; font-family:Arial,sans-serif; margin-top:1rem; line-height:1.5;">Note: Any transaction fees charged by Venmo, Zelle, or PayPal are the responsibility of the sender. Hayden C Scott is not liable for fees imposed by third-party payment platforms.</p>
+    </div>
+  </div>
+
+  <script>
+    function openPayment() {
+      const m = document.getElementById('payment-modal');
+      m.style.display = 'flex';
+    }
+    function closePayment() {
+      document.getElementById('payment-modal').style.display = 'none';
+      document.getElementById('zelle-msg').textContent = '';
+    }
+    function copyZelle() {
+      navigator.clipboard.writeText('haydenscottthemusician@gmail.com').then(() => {
+        document.getElementById('zelle-msg').textContent = 'Zelle info copied — open your Zelle app to complete payment.';
+      });
+    }
+    document.getElementById('payment-modal').addEventListener('click', function(e) {
+      if (e.target === this) closePayment();
+    });
+  </script>
+
+</body>
+</html>

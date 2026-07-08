@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "mcp__49549e58-4859-4593-aaff-99bc282fb747__list_events"
+    ]
+  }
+}

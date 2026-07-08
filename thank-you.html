@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Received — Hayden C. Scott</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,700;1,6..96,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0b0b0c;
+    --panel: #141416;
+    --ivory: #ece7dd;
+    --ivory-dim: #a8a29a;
+    --rust: #b5432c;
+    --rust-bright: #d5573a;
+    --line: #2a2a2c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(ellipse 900px 500px at 50% -10%, #1c1a19 0%, var(--black) 60%), var(--black);
+    color: var(--ivory);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+  .stub {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .stub::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--rust-bright);
+  }
+  .mark {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--rust-bright);
+    margin: 0 0 16px;
+  }
+  h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 30px;
+    margin: 0 0 14px;
+  }
+  p.sub {
+    font-size: 14px;
+    color: var(--ivory-dim);
+    line-height: 1.6;
+    margin: 0 0 8px;
+  }
+  a.back {
+    display: inline-block;
+    margin-top: 24px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ivory);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rust);
+    padding-bottom: 2px;
+  }
+</style>
+</head>
+<body>
+  <div class="stub">
+    <p class="mark">Confirmed</p>
+    <h1>Payment received</h1>
+    <p class="sub">Thanks — your payment has gone through. A receipt has been sent to the email you provided at checkout.</p>
+    <a class="back" href="/">Back to haydencscott.com</a>
+  </div>
+</body>
+</html>
