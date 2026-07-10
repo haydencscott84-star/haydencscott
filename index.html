@@ -6,7 +6,7 @@
   <title>Hayden C Scott — Music Director | Composer | Playback Systems | Lessons</title>
   <meta property="og:title" content="Hayden C Scott — Music Director | Composer | Playback Systems | Lessons" />
   <meta property="og:description" content="20 years in live music. Credits include Ghost and Awolnation. Music Director, Composer, and Drum Instructor based in Los Angeles." />
-  <meta property="og:image" content="https://haydencscott.com/profile2.jpg" />
+  <meta property="og:image" content="https://haydencscott.com/hero.jpg" />
   <meta property="og:url" content="https://haydencscott.com" />
   <meta property="og:type" content="website" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -243,6 +243,34 @@
       border-radius: 50%;
       cursor: pointer;
     }
+    .lightbox-nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: 1px solid #444;
+      color: #fff;
+      font-size: 1.6rem;
+      line-height: 1;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-nav:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .lightbox-prev { left: 1rem; }
+    .lightbox-next { right: 1rem; }
+    @media (max-width: 600px) {
+      .lightbox-nav { width: 2.4rem; height: 2.4rem; font-size: 1.2rem; }
+      .lightbox-prev { left: 0.5rem; }
+      .lightbox-next { right: 0.5rem; }
+    }
 
     /* CREDITS */
     .credits-group {
@@ -294,39 +322,6 @@
       font-style: italic;
     }
 
-    /* SERVICES */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .service-card {
-      background: var(--card);
-      border: 1px solid #2a2a2a;
-      border-radius: 4px;
-      padding: 2rem;
-      transition: border-color 0.2s;
-    }
-    .service-card:hover { border-color: var(--accent); }
-    .service-card .icon {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .service-card h3 {
-      font-family: 'Cinzel', Georgia, serif;
-      color: var(--accent);
-      font-size: 1.15rem;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-    }
-    .service-card p {
-      font-size: 0.95rem;
-      color: #999;
-      margin: 0;
-    }
-
     /* CONTACT */
     #contact {
       text-align: center;
@@ -371,25 +366,35 @@
   <nav>
     <div class="logo"></div>
     <ul>
+      <li><a href="#bio">Bio</a></li>
       <li><a href="#music">Music</a></li>
       <li><a href="#video">Video</a></li>
       <li><a href="#visuals">Visuals</a></li>
       <li><a href="#credits">Credits</a></li>
-      <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <div class="hero">
-    <img src="profile2.jpg" alt="Hayden C Scott" style="width:100%; max-width:510px; height:auto; display:block; margin-bottom:2rem; border-radius:4px;">
+    <img src="hero.jpg" alt="Hayden C Scott" style="width:100%; max-width:510px; height:auto; display:block; margin-bottom:2rem; border-radius:4px;">
     <p class="tagline">Music Director <span>·</span> Composer <span>·</span> Playback Systems</p>
     <div class="hero-links">
       <a href="#music" class="btn filled">Hear My Work</a>
       <a href="#contact" class="btn">Get In Touch</a>
-      <button onclick="openPayment()" class="btn" style="border:1px solid var(--accent); color:var(--accent); cursor:pointer; font-family:'Inter',Arial,sans-serif; background:none;">Pay</button>
     </div>
   </div>
+
+  <!-- BIO -->
+  <section id="bio">
+    <div class="section-label">Bio</div>
+    <p>Hayden Scott is a drummer, music director, and composer whose work moves between the visceral pulse of the stage and the textural, cinematic language of score.</p>
+    <p>Over nearly two decades, Hayden has toured and recorded as a drummer and music director, with a decade-long tenure in Ghost anchoring a broader list of credits that includes Awolnation. His playing was shaped first by soul and R&B, before grunge and Nirvana rewired everything — a mix that still shows up as feel and groove married to raw, physical intensity.</p>
+    <p>That same instinct now drives his composing. A Berklee-trained composer working from a hybrid Pro Tools and Ableton setup, Hayden most recently scored the indie film The Hired Man and continues developing projects providing additional score. His original work aims at sync and picture — dark, atmospheric, and distinctly modern, moving in the same sonic world as Trent Reznor & Atticus Ross, Mica Levi, Oneohtrix Point Never, and Cliff Martinez, built from a player's hands and a drummer's instinct.</p>
+    <p>Alongside his music, Hayden also maintains a photography and design practice.</p>
+  </section>
+
+  <hr class="divider" />
 
   <!-- MUSIC -->
   <section id="music">
@@ -438,10 +443,12 @@
   <section id="visuals">
     <div class="section-label">Visuals</div>
     <div class="visuals-grid">
-      <a href="visuals/DANCER3_2.0.jpg" onclick="return openLightbox(event, 'visuals/DANCER3_2.0.jpg')"><img src="visuals/DANCER3_2.0.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
-      <a href="visuals/IMG_4322-Edit.jpg" onclick="return openLightbox(event, 'visuals/IMG_4322-Edit.jpg')"><img src="visuals/IMG_4322-Edit.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
-      <a href="visuals/_MG_4183-Edit.jpg" onclick="return openLightbox(event, 'visuals/_MG_4183-Edit.jpg')"><img src="visuals/_MG_4183-Edit.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
-      <a href="visuals/_MG_3654.jpg" onclick="return openLightbox(event, 'visuals/_MG_3654.jpg')"><img src="visuals/_MG_3654.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+      <a href="visuals/DANCER3_2_border.jpg" onclick="return openLightbox(event, 0)"><img src="visuals/DANCER3_2_border.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+      <a href="visuals/IMG_4322-Edit.jpg" onclick="return openLightbox(event, 1)"><img src="visuals/IMG_4322-Edit.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+      <a href="visuals/_MG_4183-Edit.jpg" onclick="return openLightbox(event, 2)"><img src="visuals/_MG_4183-Edit.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+      <a href="visuals/_MG_3680.jpg" onclick="return openLightbox(event, 3)"><img src="visuals/_MG_3680.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+      <a href="visuals/_MG_3942.jpg" onclick="return openLightbox(event, 4)"><img src="visuals/_MG_3942.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
+      <a href="visuals/_MG_3968-Edit-Edit-Edit.jpg" onclick="return openLightbox(event, 5)"><img src="visuals/_MG_3968-Edit-Edit-Edit.jpg" alt="Hayden C Scott — visual" loading="lazy"></a>
     </div>
   </section>
 
@@ -477,25 +484,6 @@
       <ul class="credits-list">
         <li><span class="credit-name">Rancho De La Luna (Studio)</span><span class="credit-meta"><span>Engineer</span><span>2015–2017</span></span></li>
       </ul>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="section-label">Work With Me</div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="icon">🎬</div>
-        <h3>Music Director</h3>
-        <p>20 years in live music with credits including Ghost and Awolnation. Streamlining the preparation and production of bands, finding the right people, and designing performances with the flexibility to create unique moments — while maintaining precision and consistency.</p>
-      </div>
-      <div class="service-card">
-        <div class="icon">🎼</div>
-        <h3>Composer</h3>
-        <p>Original compositions spanning multiple genres. Passionate about crafting music that serves the moment — from intimate pieces to full production arrangements. Collaborations and drumming sessions are always welcome.</p>
-      </div>
     </div>
   </section>
 
@@ -549,6 +537,8 @@
   <!-- LIGHTBOX -->
   <div id="lightbox">
     <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+    <button class="lightbox-nav lightbox-prev" onclick="showPrevImage()" aria-label="Previous photo">‹</button>
+    <button class="lightbox-nav lightbox-next" onclick="showNextImage()" aria-label="Next photo">›</button>
     <img id="lightbox-img" src="" alt="">
   </div>
 
@@ -570,9 +560,20 @@
       if (e.target === this) closePayment();
     });
 
-    function openLightbox(e, src) {
+    const visualsImages = [
+      'visuals/DANCER3_2_border.jpg',
+      'visuals/IMG_4322-Edit.jpg',
+      'visuals/_MG_4183-Edit.jpg',
+      'visuals/_MG_3680.jpg',
+      'visuals/_MG_3942.jpg',
+      'visuals/_MG_3968-Edit-Edit-Edit.jpg'
+    ];
+    let lightboxIndex = 0;
+
+    function openLightbox(e, index) {
       e.preventDefault();
-      document.getElementById('lightbox-img').src = src;
+      lightboxIndex = index;
+      document.getElementById('lightbox-img').src = visualsImages[lightboxIndex];
       document.getElementById('lightbox').style.display = 'flex';
       return false;
     }
@@ -580,11 +581,22 @@
       document.getElementById('lightbox').style.display = 'none';
       document.getElementById('lightbox-img').src = '';
     }
+    function showNextImage() {
+      lightboxIndex = (lightboxIndex + 1) % visualsImages.length;
+      document.getElementById('lightbox-img').src = visualsImages[lightboxIndex];
+    }
+    function showPrevImage() {
+      lightboxIndex = (lightboxIndex - 1 + visualsImages.length) % visualsImages.length;
+      document.getElementById('lightbox-img').src = visualsImages[lightboxIndex];
+    }
     document.getElementById('lightbox').addEventListener('click', function(e) {
       if (e.target === this) closeLightbox();
     });
     document.addEventListener('keydown', function(e) {
+      if (document.getElementById('lightbox').style.display !== 'flex') return;
       if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') showNextImage();
+      if (e.key === 'ArrowLeft') showPrevImage();
     });
   </script>
 
