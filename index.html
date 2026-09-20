@@ -52,7 +52,23 @@
       font-weight: bold;
     }
     nav ul {
-      display: none;
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    nav ul li a:hover {
+      color: var(--accent);
     }
 
     /* HERO */
@@ -370,9 +386,16 @@
     }
 
     /* MOBILE */
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       nav ul { gap: 1rem; }
-      nav ul li a { font-size: 0.75rem; }
+      nav ul li a { font-size: 0.7rem; }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 0.85rem 1rem; }
+    }
+    @media (max-width: 480px) {
+      nav ul { flex-wrap: wrap; justify-content: center; row-gap: 0.5rem; column-gap: 0.85rem; }
+      nav ul li a { font-size: 0.68rem; }
     }
   </style>
 </head>
@@ -381,7 +404,8 @@
   <nav>
     <div class="logo"></div>
     <ul>
-      <li><a href="#bio">Bio</a></li>
+      <li><a href="#modus-operandi">Modus Operandi</a></li>
+      <li><a href="#" onclick="return openBio()">Bio</a></li>
       <li><a href="#music">Music</a></li>
       <li><a href="#video">Video</a></li>
       <li><a href="#visuals">Visuals</a></li>
@@ -400,13 +424,17 @@
     </div>
   </div>
 
-  <!-- BIO -->
-  <section id="bio">
-    <div class="section-label">Bio</div>
-    <p>Hayden Scott is a drummer, music director, and composer whose work moves between the visceral pulse of the stage and the textural, cinematic language of score.</p>
-    <p>Over nearly two decades, Hayden has toured and recorded as a drummer and music director, with a decade-long tenure in Ghost anchoring a broader list of credits. His playing was shaped first by soul and R&B, before grunge and Nirvana rewired everything — a mix that still shows up as feel and groove married to raw, physical intensity.</p>
-    <p>That same instinct now drives his composing. A Berklee-trained composer working from a hybrid Pro Tools and Ableton setup, Hayden most recently scored the indie film The Hired Man and continues developing projects providing additional score. His original work aims at sync and picture — dark, atmospheric, and distinctly modern, moving in the same sonic world as Trent Reznor & Atticus Ross, Charlie Clouser, Mica Levi, Oneohtrix Point Never, and Cliff Martinez, built from a player's hands and a drummer's instinct.</p>
-    <p>Alongside his music, Hayden also maintains a photography and design practice.</p>
+  <!-- MODUS OPERANDI -->
+  <section id="modus-operandi">
+    <div class="section-label">Modus Operandi</div>
+    <h2>Authenticity and Survival in Pursuit of Art</h2>
+    <p>Intention is the compass that steers fate. My purpose is to pursue, not inherit. Opportunities present themselves in unique ways, no one experience will ever be the same and it is my job to decide whether it carries me in the direction I want to go, not for money, fame or adoration, but for my own curiosity and love of the craft. If I don't truly love it, it will never last, even if I get lucky for a while.</p>
+    <p>Success is often a measure of sacrifice, and in accepting such risk, be mindful of the dividend; often experience and knowledge, rather than stability and wealth. Know every reward arrives with its own toll.</p>
+    <p>Not every path has been right for me — I am willing to accept some mis-direction in pursuit. However, it must be a decisive action in moving on. The clock is always ticking, so I aspire to be sure about what I am doing and if there's doubt, change course. Continually work to sharpen that instinct.</p>
+    <p>I am careful how I use social media because it's often an attempt for attention masked as talent. Privacy is a sanctuary and intention will eventually reveal itself. Being impressive is not the same as being impactful. Content, for the most part, is the snake eating itself. Who knows when the snake will die, but nothing is forever, so don't give the snake too much value.</p>
+    <p>I calibrate myself in every sense of the work I do, at every stage of the process. Be unique, don't be complacent, but a version of fakeness in either direction will never survive; True will outlast interest anytime the two compete.</p>
+    <p>I was never confident enough in myself, oftentimes survival played the bigger role. Good choices provide momentum. Accept mistakes or failure without self-loathing — the path through life is non-linear. It's far more important to evolve slowly in a year, than leap ahead and last only a day. I suspect imperfection is the point. Art has chosen me, therefore I must respect it, and in doing so, respect myself.</p>
+    <p style="font-family:'Cinzel', Georgia, serif; color:var(--muted); font-size:0.95rem; margin-top:2rem;">— Hayden C Scott</p>
   </section>
 
   <hr class="divider" />
@@ -523,7 +551,7 @@
     <div class="credits-group">
       <h3>Engineer</h3>
       <ul class="credits-list">
-        <li><span class="credit-name">Rancho De La Luna (Studio)</span><span class="credit-meta"><span>Engineer</span><span>2015–2017</span></span></li>
+        <li><span class="credit-name">Rancho De La Luna (Studio)</span><span class="credit-meta"><span>Engineer</span><span>2014–2017</span></span></li>
       </ul>
     </div>
   </section>
@@ -575,6 +603,18 @@
     </div>
   </div>
 
+  <!-- BIO MODAL -->
+  <div id="bio-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center; padding:2rem 1.5rem;">
+    <div style="background:#1a1a1a; border:1px solid #333; border-radius:6px; padding:2.5rem; max-width:640px; width:100%; max-height:85vh; overflow-y:auto; position:relative;">
+      <button onclick="closeBio(); return false;" style="position:absolute; top:1rem; right:1.25rem; background:none; border:none; color:#888; font-size:1.3rem; cursor:pointer;">✕</button>
+      <div class="section-label" style="margin-bottom:1.25rem;">Bio</div>
+      <p>Hayden Scott is a drummer, music director, and composer whose work moves between the visceral pulse of the stage and the textural, cinematic language of score.</p>
+      <p>Over nearly two decades, Hayden has toured and recorded as a drummer and music director, with a decade-long tenure in Ghost anchoring a broader list of credits. His playing was shaped first by soul and R&B, before grunge and Nirvana rewired everything — a mix that still shows up as feel and groove married to raw, physical intensity.</p>
+      <p>That same instinct now drives his composing. A Berklee-trained composer working from a hybrid Pro Tools and Ableton setup, Hayden most recently scored the indie film The Hired Man and continues developing projects providing additional score. His original work aims at sync and picture — dark, atmospheric, and distinctly modern, moving in the same sonic world as Trent Reznor & Atticus Ross, Charlie Clouser, Mica Levi, Oneohtrix Point Never, and Cliff Martinez, built from a player's hands and a drummer's instinct.</p>
+      <p style="margin-bottom:0;">Alongside his music, Hayden also maintains a photography and design practice.</p>
+    </div>
+  </div>
+
   <!-- LIGHTBOX -->
   <div id="lightbox">
     <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
@@ -599,6 +639,17 @@
     }
     document.getElementById('payment-modal').addEventListener('click', function(e) {
       if (e.target === this) closePayment();
+    });
+
+    function openBio() {
+      document.getElementById('bio-modal').style.display = 'flex';
+      return false;
+    }
+    function closeBio() {
+      document.getElementById('bio-modal').style.display = 'none';
+    }
+    document.getElementById('bio-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeBio();
     });
 
     const visualsImages = [
@@ -633,10 +684,14 @@
       if (e.target === this) closeLightbox();
     });
     document.addEventListener('keydown', function(e) {
-      if (document.getElementById('lightbox').style.display !== 'flex') return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') showNextImage();
-      if (e.key === 'ArrowLeft') showPrevImage();
+      if (e.key !== 'Escape') {
+        if (document.getElementById('lightbox').style.display !== 'flex') return;
+        if (e.key === 'ArrowRight') showNextImage();
+        if (e.key === 'ArrowLeft') showPrevImage();
+        return;
+      }
+      if (document.getElementById('lightbox').style.display === 'flex') closeLightbox();
+      if (document.getElementById('bio-modal').style.display === 'flex') closeBio();
     });
   </script>
 
