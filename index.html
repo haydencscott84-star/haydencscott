@@ -579,7 +579,7 @@
 
   <footer>
     &copy; 2026 Hayden C Scott. All rights reserved.
-    <span style="display:block; margin-top:0.4rem; color:#333; font-size:0.75rem;">Last updated: June 2026</span>
+    <span id="last-updated" style="display:block; margin-top:0.4rem; color:#333; font-size:0.75rem;"></span>
   </footer>
 
   <!-- PAYMENT MODAL -->
@@ -630,6 +630,14 @@
   </div>
 
   <script>
+    (function() {
+      const el = document.getElementById('last-updated');
+      const d = new Date(document.lastModified);
+      if (el && !isNaN(d)) {
+        el.textContent = 'Last updated: ' + d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+      }
+    })();
+
     function openPayment() {
       const m = document.getElementById('payment-modal');
       m.style.display = 'flex';
